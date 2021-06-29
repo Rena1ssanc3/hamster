@@ -10,7 +10,7 @@ As is a router, the client need to declare it's address. The channel registry is
 ## And then
     ChannelFuture aliceChannelFuture = new HamsterClientStarter().setAddress("Alice").start();
     ChannelFuture bobChannelFuture = new HamsterClientStarter().setAddress("Bob").start();
-    ChannelHandler printMessage = new ChannelInboundHandlerAdapter{
+    ChannelHandler printMessage = new ChannelInboundHandlerAdapter(){
         public void channelRead(ChannelHandlerContext ctx, Object msg){
             System.out.println("RECEIVE MESSAGE FROM "+ ((MessageFrame)msg).getSenderAddress() + " CONTENT:" + new String(((MessageFrame)msg).getContent()));
             }

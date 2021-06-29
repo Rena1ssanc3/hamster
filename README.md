@@ -14,7 +14,7 @@ As is a router, the client need to declare it's address. The channel registry is
         public void channelRead(ChannelHandlerContext ctx, Object msg){
             System.out.println("RECEIVE MESSAGE FROM "+ ((MessageFrame)msg).getSenderAddress() + " CONTENT:" + new String(((MessageFrame)msg).getContent()));
             }
-        }
+        };
     bobChannelFuture.channel().pipeline().addLast(printMessage);
     MessageFrame aliceToBob = new MessageFrame();
     aliceToBob.setSenderAddress("Alice");
